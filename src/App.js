@@ -3,8 +3,27 @@ import Title from './components/Title';
 import Boxes from './components/Boxes';
 import Navbar from './components/Navbar';
 import AboutMe from './components/AboutMe';
+import Ppl from './components/Ppl';
 
 class App extends Component {
+  constructor () {
+    super();
+    this.state = {
+      people: []
+    };
+  }
+
+  componentDidMount () {
+    window.fetch('https://swapi.co/api/people/')
+      .then(results => {
+        return results.json();
+      })
+      .then(data => { this.setState({people: data}); })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
+
   render () {
     return (
       <div className='tc'>
@@ -26,6 +45,9 @@ class App extends Component {
               description={'These are earlier projects I worked on when going through the freecodecamp course.'}
             />
           </a>
+        </div>
+        <div>
+          <Ppl people={this.state.people} />
         </div>
       </div>
     );
