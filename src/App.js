@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import Title from './Title';
-import Boxes from './Boxes';
-import Navbar from './Navbar';
-import AboutMe from './AboutMe';
+import Title from './components/Title';
+import Boxes from './components/Boxes';
+import Navbar from './components/Navbar';
+import AboutMe from './components/AboutMe';
 
 class App extends Component {
   render () {
