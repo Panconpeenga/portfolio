@@ -4,6 +4,33 @@ import Boxes from './components/Boxes';
 import Navbar from './components/Navbar';
 import AboutMe from './components/AboutMe';
 import Ppl from './components/Ppl';
+import Particles from 'react-particles-js';
+import './App.css'
+const particlesOptions = {
+  particles: {
+    number: {
+      value: 30,
+      density: {
+        enable: true,
+        value_area: 800
+      }
+    },
+    color: {
+      value: '#000000',
+      // value: {r:0, g:0, b:0},
+      // value: {h:0, s:100%, l:100%},
+      // value: ["#f00", "#0f0", "#00f"],
+      // value: true
+    },
+    line_linked: {
+      enable: true,
+      distance: 200,
+      color: '#000000',
+      opacity: .2,
+      width: 1,
+    }
+  }
+};
 
 class App extends Component {
   constructor () {
@@ -27,6 +54,7 @@ class App extends Component {
   render () {
     return (
       <div className='tc'>
+        <Particles className='particles' params={particlesOptions}/>
         <Navbar />
         <Title />
         <a name='about'><AboutMe /></a>
