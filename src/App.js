@@ -72,6 +72,12 @@ class App extends Component {
               imgLink={'https://cdn1.iconfinder.com/data/icons/feather-2/24/codepen-128.png'}
               description={'These are earlier projects I worked on when going through the freecodecamp course.'}
             />
+          <Boxes
+            linkName={'Background Generator'}
+            link={'https://panconpeenga.github.io/background-generator/'}
+            imgLink={'https://pbs.twimg.com/profile_images/982492405818572802/0E0PsmR-_400x400.jpg'}
+            description={'Gradient generator where colors can be input manually. A random color generator is also included!'}
+            />
           </a>
         </div>
         <div>
