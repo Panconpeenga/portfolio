@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Title from './components/Title';
 import Boxes from './components/Boxes';
-import Navbar from './components/Navbar';
+import Navbar from './components/Navbar/Navbar';
 import AboutMe from './components/AboutMe';
 import Ppl from './components/Ppl';
 import Particles from 'react-particles-js';
@@ -36,8 +36,13 @@ class App extends Component {
   constructor () {
     super();
     this.state = {
-      people: []
+      people: [],
+      route: 'home'
     };
+  }
+
+  onRouteChange = (route) => {
+    this.setState({route: route});
   }
 
   componentDidMount () {
@@ -55,11 +60,14 @@ class App extends Component {
     return (
       <div className='tc'>
         <Particles className='particles' params={particlesOptions}/>
-        <Navbar />
-        <Title />
-        <a name='about'><AboutMe /></a>
-        <div>
-          <a name='contact'>
+        <Navbar onRouteChange={this.onRouteChange}/>
+        {this.state.route === 'home'
+        ?  <div>
+          <Title />
+          <AboutMe />
+          </div>
+          :
+          <div>
             <Boxes
               linkName={'GitHub Profile'}
               link={'https://github.com/Panconpeenga'}
@@ -78,11 +86,9 @@ class App extends Component {
             imgLink={'https://pbs.twimg.com/profile_images/982492405818572802/0E0PsmR-_400x400.jpg'}
             description={'Gradient generator where colors can be input manually. A random color generator is also included!'}
             />
-          </a>
-        </div>
-        <div>
           <Ppl people={this.state.people} />
         </div>
+      }
       </div>
     );
   }
