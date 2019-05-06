@@ -1,1 +1,1 @@
-This is my portfolio is progress
+This is my portfolio in progress
