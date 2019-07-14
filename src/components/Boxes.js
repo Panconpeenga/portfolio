@@ -4,7 +4,7 @@ const Box = ({link, linkName, description, imgLink}) => {
   return (
     <div className='tc dib br3 ma0 pa3 black bg-light-gray ma2 grow bw2 shadow-5'>
       <h2>{linkName}</h2>
-      <a className='black' href={link} target='_blank'>
+      <a className='black' href={link} target='_blank' rel="noopener noreferrer">
         <img className='h2' src={imgLink} alt='icon' />
       </a>
       <p>{description}</p>
