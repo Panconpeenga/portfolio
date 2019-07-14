@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import Title from './components/Title';
 import Boxes from './components/Boxes';
 import Navbar from './components/Navbar/Navbar';
-import Icon from './components/icon.png';
 import AboutMe from './components/AboutMe';
 import Particles from 'react-particles-js';
 import './App.css'
@@ -70,10 +69,16 @@ class App extends Component {
             <Boxes
               linkName={'Messing With Star Wars API'}
               link={'https://panconpeenga.github.io/swapi_practice/'}
-              imgLink={<Icon />}
+              imgLink={'https://pbs.twimg.com/profile_images/1137245922981797888/-EeirZL9_400x400.jpg'}
               description={'Stand alone site displaying results of Star Wars API'}
               />
-          </div>
+              <Boxes
+                linkName={'Face Recognizing API'}
+                link={'https://smtbrn.herokuapp.com'}
+                imgLink={'https://pbs.twimg.com/profile_images/1137245922981797888/-EeirZL9_400x400.jpg'}
+                description={'Full stack app that includes login'}
+                />
+        </div>
           :
         <div>
           <Boxes
